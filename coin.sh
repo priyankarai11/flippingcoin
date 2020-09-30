@@ -7,7 +7,7 @@ then
 else
 	echo "Tails"
 fi
-
+echo "-----------"
 for i in $(seq 10)
 do
 arr=$((RANDOM%2))
@@ -18,5 +18,20 @@ else
 	tail=$(($tail+1))
 fi
 done
-echo "Head won $head times"
-echo "Tails won $tail times"
+echo "Counting process"
+echo "Head=$head"
+echo "Tails=$tail"
+if [ $head -gt $tail ]
+then
+	a=$(($head-$tail))
+	echo "Head won and the lead = $a than tails"
+elif [ $tail -gt $head ]
+then
+	b=$(($tail-$head))
+        echo "Tail won and the lead = $b than Head"
+else
+	echo "Its a tie "
+fi
+
+
+
